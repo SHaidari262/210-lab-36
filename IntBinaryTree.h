@@ -2,12 +2,12 @@
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
 
-// The IntBinaryTree class manages a binary tree of integers.
-class IntBinaryTree {
+// The StringBinaryTree class manages a binary tree of integers.
+class StringBinaryTree {
 private:
-   // TreeNode is a private structure for IntBinaryTree nodes.
+   // TreeNode is a private structure for StringBinaryTree nodes.
    struct TreeNode {
-      int value;         // The value in the node
+      string value;         // The value in the node
       TreeNode *left;    // Pointer to left child node
       TreeNode *right;   // Pointer to right child node
    };
@@ -18,7 +18,7 @@ private:
    // Private member functions for internal operations.
    void insert(TreeNode *&, TreeNode *&);
    void destroySubTree(TreeNode *);
-   void deleteNode(int, TreeNode *&);
+   void deleteNode(string, TreeNode *&);
    void makeDeletion(TreeNode *&);
    void displayInOrder(TreeNode *) const;
    void displayPreOrder(TreeNode *) const;
@@ -50,7 +50,7 @@ using namespace std;
 // insert accepts a TreeNode pointer and a pointer to a node.
 // The function inserts the node into the tree pointed to by 
 // the TreeNode pointer. This function is called recursively.
-void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
+void StringBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
    if (!nodePtr)
       nodePtr = newNode;                  // Insert the node.
    else if (newNode->value < nodePtr->value)
